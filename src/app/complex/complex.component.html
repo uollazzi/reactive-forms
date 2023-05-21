@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <div *ngFor="let campo  of formModel">
+        <label [attr.for]="campo.key">{{campo.label}}</label>
+
+        <div [ngSwitch]="campo.type">
+
+            <input *ngSwitchCase="'text'" [formControlName]="campo.key" [id]="campo.key" [type]="campo.type">
+
+            <input *ngSwitchCase="'number'" [formControlName]="campo.key" [id]="campo.key" [type]="campo.type">
+
+        </div>
+
+        <div *ngIf="form.get(campo.key)!.invalid && (form.get(campo.key)!.dirty || form.get(campo.key)!.touched)">
+            {{campo.label}} richiesto</div>
+    </div>
+    {{form.valid}}
+    <button type="submit" [disabled]="!form.valid">Save</button>
+
+</form>

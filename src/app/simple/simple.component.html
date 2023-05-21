@@ -1,0 +1,40 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+    <div>
+        <label>
+            Nome:
+            <input formControlName="name" placeholder="Nome">
+            {{myForm.get('name')!.value}}
+        </label>
+        <div *ngIf="myForm.get('name')!.invalid && (myForm.get('name')!.dirty || myForm.get('name')!.touched)">
+            Specificare un nome.
+        </div>
+    </div>
+    <div>
+        <label>
+            Email:
+            <input type="email" formControlName="email" placeholder="Email">
+        </label>
+        <div
+            *ngIf="myForm.controls['email'].invalid && (myForm.controls['email'].dirty || myForm.controls['email'].touched)">
+            Specificare un email.
+        </div>
+        <!-- <div
+            *ngIf="myForm.controls['email'].hasError('required') && (myForm.controls['email'].dirty || myForm.controls['email'].touched)">
+            Specificare un email.
+        </div>
+        <div
+            *ngIf="myForm.controls['email'].hasError('email') && (myForm.controls['email'].dirty || myForm.controls['email'].touched)">
+            Specificare un email valida.
+        </div> -->
+    </div>
+    <div>
+        <label>
+            Conteggio:
+            <input type="number" formControlName="count" placeholder="Conteggio">
+        </label>
+        <div *ngIf="myForm.get('count')!.invalid && (myForm.get('count')!.dirty || myForm.get('count')!.touched)">
+            Specificare un conteggio
+        </div>
+    </div>
+    <button type="submit" [disabled]="myForm.invalid">Invia</button>
+</form>
