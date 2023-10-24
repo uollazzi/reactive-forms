@@ -6,12 +6,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SimpleComponent } from './simple/simple.component';
 import { ComplexComponent } from './complex/complex.component';
+import { NameEditorComponent } from './name-editor/name-editor.component';
+import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
+import { ProfileEditorBuilderComponent } from './profile-editor-builder/profile-editor-builder.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SimpleComponent,
-    ComplexComponent
+    ComplexComponent,
+    NameEditorComponent,
+    ProfileEditorComponent,
+    ProfileEditorBuilderComponent
   ],
   imports: [
     BrowserModule,
