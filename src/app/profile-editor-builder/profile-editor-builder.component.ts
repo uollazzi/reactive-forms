@@ -39,7 +39,7 @@ export class ProfileEditorBuilderComponent implements OnInit {
     // TODO: Use EventEmitter with form value
     console.log(this.profileForm.value);
     console.log('Valid', this.profileForm.valid);
-    console.log('Nome', (this.profileForm.value as Profile).firstName);
+    console.log('Nome', (this.profileForm.value as Profile).gender);
     console.log(this.profileForm.controls["firstName"].hasError("required"))
   }
 }
